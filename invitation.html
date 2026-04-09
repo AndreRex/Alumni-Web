@@ -624,6 +624,13 @@
 
     <script>
       window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const gradYear = urlParams.get('year');
+        
+        if (gradYear) {
+          // Ganti teks pada elemen h2
+          document.getElementById('dynamicClassYear').textContent = 'Class of ' + gradYear;
+        }
         // Setup scroll observer for animations
         window.cardObserver = new IntersectionObserver(
           (entries) => {
